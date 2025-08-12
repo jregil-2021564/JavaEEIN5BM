@@ -54,22 +54,22 @@
         </div>
         <div class="login-section">
             <div class="form-box login">
-                <form action="MenuInicio.jsp" method="post">
+                <form action="Validar" method="POST">
                     <h2>Iniciar Sesion</h2>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-envelope'></i></span>
-                        <input type="email" required>
+                        <input type="email" name="txtCorreo" required>
                         <label >Correo</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
-                        <input type="password" required>
+                        <input type="password" name="txtPassword" required>
                         <label>Contraseña</label>
                     </div>
                     <div class="remember-password">
                         <label for=""><input type="checkbox">Ver contraseña</label>
                     </div>
-                    <button class="btn">Iniciar sesión</button>
+                    <center> <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block"</center>
                     <div class="create-account">
                         <p>¿Crear una nueva cuenta? <a href="registro.jsp" class="register-link">Registrarse</a></p>
                     </div>

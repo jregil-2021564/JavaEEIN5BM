@@ -11,6 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Cliente;
+import modelo.ClienteDAO;
 
 /**
  *
@@ -18,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Validar", urlPatterns = {"/Validar"})
 public class Validar extends HttpServlet {
+    ClienteDAO clienteDAO = new ClienteDAO();
+    Cliente cliente = new Cliente();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -71,14 +75,23 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       String accion = request.getParameter("accion");
+        if (accion.equalsIgnoreCase("Ingresar")) {
+            String email = request.getParameter("txtCorreo");
+            String password = request.getParameter("txtPassword");
+            cliente = clienteDAO.validar(email, password );
+            if (cliente.getCorreoCliente() !=null) {
+                request.setAttribute("email", cliente);
+                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+            }else{
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+        }else{
+            
+            request.getRequestDispatcher("index.jsp").forward(request, response);
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+}
+    
     @Override
     public String getServletInfo() {
         return "Short description";
