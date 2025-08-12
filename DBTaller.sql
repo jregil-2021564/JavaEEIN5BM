@@ -332,10 +332,10 @@ delimiter ;
 -- call sp_BuscarCliente(1);
 -- VALIDACION DE CLIENTE PARA USUARIO
 DELIMITER $$
-create procedure sp_validarCliente(in userr varchar(100), in pass blob)
+create procedure sp_validarCliente(in email varchar(100), in pass blob)
 	begin
 		select codigoCliente, nombreCliente, telefonoCliente, correoCliente, direccion, contrasena from Cliente
-			where nombreCliente = userr and contrasena = pass;
+			where correoCliente = email and contrasena = pass;
     end$$
 DELIMITER ;
 call sp_validarCliente("Ana López","maxQuinto");
