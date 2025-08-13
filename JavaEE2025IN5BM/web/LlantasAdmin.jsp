@@ -48,7 +48,17 @@
         <nav class="bannerOpciones">
             <ul class="menu">
                 <li><a href="MenuInicioAdmin.jsp">Inicio</a></li>
-                            
+                <li><a href="MecanicosAdmin.jsp">Mecanicos</a></li>
+                <li><a href="ClientesAdmin.jsp">Clientes</a></li>
+                <li><a href="AutosAdmin.jsp">Autos</a></li>
+                <li><a href="RepuestosAdmin.jsp">Repuestos</a></li>
+                <li><a href="AccesoriosAdmin.jsp">Accesorios</a></li>
+                <li><a href="ServicioAdmin.jsp">Servicio</a></li>
+                <li><a href="DetalleServicioAdmin.jsp">DetalleServicio</a></li>
+                <li><a href="ReparacionesAdmin.jsp">Reparacion</a></li>
+                <li><a href="OrdenReparacionAdmin.jsp">OrdenReparacion</a></li>
+                <li><a href="FacturaAdmin.jsp">Factura</a></li>
+                <li><a href="DetalleFacturaAdmin.jsp">DetalleFactura</a></li>            
             </ul>
         </nav>
     </header>
